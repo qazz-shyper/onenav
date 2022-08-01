@@ -103,3 +103,20 @@
 .setting-msg a{
     color:#01AAED;
 }
+/* 占位用 */
+.place-holder{
+    padding-bottom: 3em;
+}
+.screenshot {
+    height:220px;
+}
+.screenshot img{
+    max-width: auto;
+    max-height: 200px;
+    max-width:96%;
+}
+
+#progress{
+    display:none;
+    margin-top:1em;
+}

@@ -3,7 +3,15 @@
 
 <div class="layui-body">
 <!-- 内容主体区域 -->
-<div class="layui-row content-body">
+<div class="layui-row content-body place-holder">
+    <!-- 说明提示框 -->
+    <div class="layui-col-lg12">
+      <div class="setting-msg">
+        <p>1. 权重越大，排序越靠前</p>
+        <p>2. 识别功能可以自动获取链接标题和描述信息，但不确保一定成功</p>
+      </div>
+    </div>
+    <!-- 说明提示框END -->
     <div class="layui-col-lg12">
     <form class="layui-form">
     <div class="layui-form-item" style = "display:none;">
@@ -18,6 +26,18 @@
       <input type="url" id = "url" name="url" value = "<?php echo $link['url']; ?>" required  lay-verify="required|url" placeholder="请输入有效链接" autocomplete="off" class="layui-input">
     </div>
   </div>
+
+  <!-- 添加备用链接 -->
+  <div class="layui-col-lg12">
+    <form class="layui-form">
+    <div class="layui-form-item">
+    <label class="layui-form-label">备用URL</label>
+    <div class="layui-input-block">
+      <input type="url" id = "url_standby" value = "<?php echo $link['url_standby']; ?>" name="url_standby" placeholder="请输入备用链接，如果没有，请留空" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <!-- 备用链接END -->
+
   <div class="layui-form-item">
     <label class="layui-form-label">链接名称</label>
     <div class="layui-input-block">
@@ -25,7 +45,7 @@
     </div>
   </div>
   <div class="layui-form-item">
-    <label class="layui-form-label">选择框</label>
+    <label class="layui-form-label">所属分类</label>
     <div class="layui-input-block">
       <select name="fid" lay-verify="required" lay-search>
         <option value="<?php echo $link['fid'] ?>"><?php echo $cat_name; ?></option>

@@ -3,15 +3,33 @@
 
 <div class="layui-body">
 <!-- 内容主体区域 -->
-<div class="layui-row content-body">
+<div class="layui-row content-body place-holder">
+    <!-- 说明提示框 -->
     <div class="layui-col-lg12">
-    <form class="layui-form">
+      <div class="setting-msg">
+        <p>1. 权重越大，排序越靠前</p>
+        <p>2. 识别功能可以自动获取链接标题和描述信息，但不确保一定成功</p>
+      </div>
+    </div>
+    <!-- 说明提示框END -->
+    <div class="layui-col-lg12">
+    <form class="layui-form layui-form-pane">
     <div class="layui-form-item">
     <label class="layui-form-label">URL</label>
     <div class="layui-input-block">
-      <input type="url" id = "url" name="url" required  lay-verify="required|url" placeholder="请输入有效链接" autocomplete="off" class="layui-input">
+      <input id = "url" name="url" required  lay-verify="required" placeholder="请输入有效链接" autocomplete="off" class="layui-input">
     </div>
   </div>
+<!-- 添加备用链接 -->
+  <div class="layui-col-lg12">
+    <div class="layui-form-item">
+    <label class="layui-form-label">备用URL</label>
+    <div class="layui-input-block">
+      <input type="url" id = "url_standby" name="url_standby" placeholder="请输入备用链接，如果没有，请留空" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <!-- 备用链接END -->
+
   <div class="layui-form-item">
     <label class="layui-form-label">链接名称</label>
     <div class="layui-input-block">
@@ -53,12 +71,10 @@
     </div>
   </div>
   <div class="layui-form-item">
-    <div class="layui-input-block">
       <button class="layui-btn" lay-submit lay-filter="add_link">添加</button>
       <!-- <button class="layui-btn" lay-submit lay-filter="get_link_info">识别</button> -->
       <a href="javascript:;" class="layui-btn" onclick="get_link_info()">识别</a>
       <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-    </div>
   </div>
 </form>
     </div>
